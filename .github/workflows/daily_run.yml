@@ -1,17 +1,17 @@
-name: Daily Price Checker
+name: Daily Price Tracker
 
 on:
   schedule:
-    # This runs the script every day at 08:00 UTC
-    - cron: '0 8 * * *' 
-  workflow_dispatch: # Allows you to run it manually from the Actions tab for testing
+    # Runs at 08:00 UTC every day
+    - cron: '0 8 * * *'
+  workflow_dispatch: # Allows you to run it manually to test
 
 jobs:
-  run-scraper:
+  check-price:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -19,12 +19,13 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
+      - name: Install Libraries
         run: |
-          pip install -r requirements.txt
+          pip install requests beautifulsoup4 python-dotenv
 
-      - name: Run script
+      - name: Run Tracker Script
         env:
+          # This maps the Secrets you added in Step 1 to the Python script
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
