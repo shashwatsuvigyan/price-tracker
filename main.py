@@ -7,12 +7,12 @@ from dotenv import load_dotenv
 load_dotenv()
 # --- CONFIGURATION ---
 # 1. THE URL
-URL = "https://www.amazon.in/dp/B0DW97XR27?s=apparel&ref=cm_sw_r_cso_cp_apan_dp_V7KC113D1AFJ1HCRXP3G&ref_=cm_sw_r_cso_cp_apan_dp_V7KC113D1AFJ1HCRXP3G&social_share=cm_sw_r_cso_cp_apan_dp_V7KC113D1AFJ1HCRXP3G&th=1&psc=1"
+URL = "https://www.amazon.in/GUESS-White-Dial-Men-Watch/dp/B07HBLDVP3/ref=sr_1_1_sspa?crid=2GW9XMRZXN43Z&dib=eyJ2IjoiMSJ9.OoIKv06C8NtXMIAqS7d4_bj0tm5b6asFBqdAOZ_T8mv98lY5CaWT3TvC0-NxoMJmeGb1KNLBDoq2zEvdVk9Ktq7p-HDqmanCVng9uJuYFl1la2sr_0ii3MYuA6js85I5mAgY23w8gbwEQhxX8DF5W3MZneX6j49QSNGYkJ3naXRzhdXASF14ihq-3LCGE8eOa7jVCrtXtZSLhFL1nNkhlLQz3CtofONH1JNsV_igXT1i8z7Ee7njau863h2TxIJQhCLwineOOlRU0GgAhj3RNoAfELim3SXRxejMV0GHWxk.CJ8x6GLF-RZgrv2d_eeNGPGUV31uaI77Ons3xKKzlZ4&dib_tag=se&keywords=watch&qid=1767632984&s=apparel&sprefix=watch+%2Capparel%2C506&sr=1-1-spons&aref=sj8hgR2Gtw&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
 
 # 2. THE TARGET PRICE
 # The current price looks to be around ₹199 - ₹299. 
 # Set this to your desired buy price.
-TARGET_PRICE = 2000.00 
+TARGET_PRICE = 20000.00 
 
 # 3. HTML SELECTORS
 # Amazon uses the class "a-price-whole" for the main number (e.g., "199").
@@ -117,4 +117,5 @@ def main():
         print(">>> Failed to retrieve valid price data.")
 
 if __name__ == "__main__":
+
     main()
